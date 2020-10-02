@@ -24,8 +24,19 @@
 
     <div class="column is-paddingless">
       <div class="is-block is-full">
-        <router-view />
+        <transition name="fade">
+          <router-view />
+        </transition>
       </div>
     </div>
 	</div>
 </template>
+
+<style scoped>
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s;
+}
+.fade-enter, .fade-leave-to {
+  opacity: 0;
+}
+</style>
