@@ -1,7 +1,7 @@
-export class Dictionary<Type> {
-    private content: [String, Type][];
+export class Dictionary<Type, Index = String> {
+    private content: [Index, Type][];
 
-    constructor(content: [String, Type][]){
+    constructor(content: [Index, Type][]) {
         this.content = content;
     }
 
@@ -18,7 +18,9 @@ export class Dictionary<Type> {
         return arr;
     }
 
-    public find(name: String){
-        //
+    public find(name: Index): Type | undefined {
+        let el = this.content.find((value) => value[0] === name);
+
+        return el ? el[1] : undefined;
     }
 }
