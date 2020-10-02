@@ -23,7 +23,9 @@
 		
 
     <div class="column is-paddingless">
-      <router-view />
+      <div class="is-block is-full">
+        <router-view />
+      </div>
     </div>
 	</div>
 </template>
