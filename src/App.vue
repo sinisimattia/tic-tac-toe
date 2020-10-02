@@ -1,11 +1,18 @@
 <template>
-  <div id="app">
-    <p>Tic Tac Toe</p>
-  </div>
+	<div id="app">
+		<div class="hero is-primary is-fullheight">
+			<div class="hero-body container">
+				<div class="has-text-centered">
+					<h1 class="title is-1">Tic-Tac-Toe</h1>
+					<h2 class="subtitle is-3">but with emojis</h2>
+				</div>
+			</div>
+		</div>
+	</div>
 </template>
 
 <script>
 export default {
-  name: 'App',
-}
+	name: "App",
+};
 </script>
