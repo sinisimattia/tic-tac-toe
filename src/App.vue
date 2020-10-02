@@ -11,6 +11,13 @@
 					<h2 class="subtitle is-3">but with emojis</h2>
 				</div>
 			</div>
+
+      <div class="hero-foot">
+        <div class="container">
+          <p class="has-text-centered has-text-grey">Mattia Sinisi</p>
+        </div>
+        
+      </div>
 		</div>
 	</div>
 </template>
