@@ -1,6 +1,6 @@
 import { Dictionary } from '../classes/Dictionary'
 
-test("Dictionary construction", () => {
+test("Dictionary construction and JSON conversion", () => {
     let dictionary = new Dictionary<String>([
         ["name", "Mattia"],
         ["name", "Not Mattia"]
