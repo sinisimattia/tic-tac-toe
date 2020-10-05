@@ -1,4 +1,6 @@
-export class Dictionary<Type, Index = String> {
+import { Representable } from '@/interfaces/Representable';
+
+export class Dictionary<Type, Index = String> implements Representable {
     private content: [Index, Type][];
 
     constructor(content: [Index, Type][]) {
