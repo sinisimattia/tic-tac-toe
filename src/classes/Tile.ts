@@ -1,30 +1,23 @@
 import { Representable } from '@/interfaces/Representable';
 
 export class Tile implements Representable{
-    private _id: Number;
-    private _symbol: String;
+    private _type: Number;
 
-    constructor(id: Number, symbol: String){
-        this._id = id;
-        this._symbol = symbol;
+    constructor(type: Number){
+        this._type = type;
     }
 
-    get id(){
-        return this._id;
-    }
-
-    get symbol(){
-        return this._symbol;
+    get type(){
+        return this._type;
     }
 
     public toString() {
-        return this._symbol;
+        return "" + this.type;
     }
 
     public toJson() {
         return {
-            id: this._id,
-            symbol: this._symbol,
+            type: this._type
         }
     }
 
