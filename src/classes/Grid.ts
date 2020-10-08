@@ -15,6 +15,20 @@ export class Grid implements Representable {
         this._content = new Array<Tile>(side).fill(new Tile(0)).map(() => new Array(side));
     }
 
+    get content(){
+        let result = new Array;
+
+        this._content.forEach((row, rowIndex) => {
+            result.push([]);
+
+            row.forEach((cell, colIndex) => {
+                result[rowIndex][colIndex] = cell.type
+            });
+        })
+
+        return result;
+    }
+
     toString(): String {
         let S = new String("Grid\n");
 
@@ -28,9 +42,12 @@ export class Grid implements Representable {
 
         return S;
     }
-    toJson(): Object {
-        console.log(this._content)
-        throw new Error('Method not implemented.');
+
+    toJson(): any {
+        return {
+            side: this._side,
+            content: this.content
+        }
     }
 
 }
