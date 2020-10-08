@@ -2,13 +2,13 @@ import { Tile } from '@/classes/Tile';
 import { Representable } from '@/interfaces/Representable';
 
 export class Grid implements Representable {
-    private _side: Number;
+    private _side: number;
     private _content: Tile[][];
 
-    constructor(side: Number){
+    constructor(side: number){
         this._side = side;
     
-        this._content = new Array(side).fill(new Tile(0)).map(() => new Array(side));
+        this._content = new Array<Tile>(side).fill(new Tile(0)).map(() => new Array(side));
     }
 
     toString(): String {
