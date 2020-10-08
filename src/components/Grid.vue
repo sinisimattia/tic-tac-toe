@@ -11,7 +11,7 @@
 					<div class="content is-flex">
 						<div class="is-centered">
 							<!-- TODO Use cell content for slot name -->
-							<slot :name="`tile-${y - 1 + content.side * (x - 1)}`"
+							<slot :name="`type-${grid.find(x - 1, y - 1)}`"
 								>({{ x }},{{ y }})</slot
 							>
 						</div>
@@ -23,14 +23,23 @@
 </template>
 
 <script>
+import { Grid } from '@/classes/Grid';
+
 export default {
 	props: {
-		content: Object
+		grid: {
+			type: Grid
+		}
 	},
 	methods: {
 		select(x, y) {
 			this.$emit("selected", { x: x, y: y });
 		},
 	},
+	computed: {
+		content(){
+			return this.grid.toJson()
+		}
+	}
 };
 </script>
