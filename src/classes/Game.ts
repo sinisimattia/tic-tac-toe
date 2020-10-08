@@ -6,7 +6,7 @@ import { Tile } from './Tile';
 export class Game implements Representable {
     private _grid: Grid;
     private _winner: string|undefined = undefined;
-    private _turnIndex: number = 0;
+    private _turnIndex: number = 1;
     private _playersDictionary: Dictionary<string, number>;
 
     constructor(gridSize: number = 3, symbols: string[] = ["X", "O"]){
@@ -22,6 +22,8 @@ export class Game implements Representable {
     }
 
     public put(){}
+
+    //TODO Make sure the turn never hits 0 and loops around the dictionary
     private completeTurn(){}
     private checkStatus(){}
 
