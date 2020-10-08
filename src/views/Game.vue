@@ -2,7 +2,7 @@
   <div class="hero is-fullheight is-primary">
       <div class="hero-body container">
         <Grid @selected="move" :grid="controller.grid">
-            <template v-slot:[emptySlot]></template>
+            <template v-for="type in controller.dictionary.content" v-slot:[`type-${type.name}`]>{{type.value}}</template>
         </Grid>
       </div>
   </div>
