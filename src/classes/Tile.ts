@@ -11,11 +11,11 @@ export class Tile implements Representable{
         return this._type;
     }
 
-    public toString() {
+    public toString(): String {
         return "" + this.type;
     }
 
-    public toJson() {
+    public toJson(): any {
         return {
             type: this._type
         }

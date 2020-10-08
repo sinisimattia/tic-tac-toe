@@ -11,7 +11,7 @@ export class Dictionary<Type, Index = String> implements Representable {
         return '' + this.toJson();
     }
 
-    toJson(): Object {
+    toJson(): any {
         return this.content;
     }
 
