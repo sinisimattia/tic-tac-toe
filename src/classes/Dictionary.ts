@@ -3,7 +3,7 @@ import { Representable } from '@/interfaces/Representable';
 export class Dictionary<Type, Index = String> implements Representable {
     private _content: [Index, Type][];
 
-    constructor(content: [Index, Type][]) {
+    constructor(content: [Index, Type][] = []) {
         this._content = content;
     }
 
@@ -32,5 +32,9 @@ export class Dictionary<Type, Index = String> implements Representable {
         let el = this._content.find((value) => value[0] === name);
 
         return el ? el[1] : undefined;
+    }
+
+    public add(name: Index, value: Type){
+        this._content.push([name, value]);
     }
 }
