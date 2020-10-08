@@ -29,7 +29,7 @@ export class Grid implements Representable {
         return result;
     }
 
-    toString(): String {
+    public toString(): String {
         let S = new String("Grid\n");
 
         this._content.forEach(row => {
@@ -43,7 +43,7 @@ export class Grid implements Representable {
         return S;
     }
 
-    toJson(): any {
+    public toJson(): any {
         return {
             side: this._side,
             content: this.content
