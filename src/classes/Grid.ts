@@ -46,6 +46,21 @@ export class Grid implements Representable {
         return this._content[x][y];
     }
 
+    public line(from: [x: number, y: number], to: [x: number, y: number]){
+        let start = {
+            x: from[0],
+            y: from[1]
+        };
+
+        let end = {
+            x: to[0],
+            y: to[1]
+        };
+
+        if(!this.isPositionValid(start.x, start.y) || !this.isPositionValid(end.x, end.y))
+            throw new Error(`Invalid position in either start or end`);
+    }
+
     private isPositionValid(x: number, y: number): boolean{
         return (x >= 0 && x <= this._side - 1) && (y >= 0 && y <= this._side - 1);
     }
