@@ -1,9 +1,9 @@
 import { Representable } from '@/interfaces/Representable';
 
 export class Tile implements Representable{
-    private _type: Number;
+    private _type: number;
 
-    constructor(type: Number){
+    constructor(type: number){
         this._type = type;
     }
 
