@@ -12,7 +12,7 @@ export class Grid implements Representable {
 
         this._side = side;
     
-        this._content = new Array<Tile>(side).fill(new Tile(0)).map(() => new Array(side));
+        this._content = new Array<Tile>(side).fill(new Tile(Tile.EMPTY)).map(() => new Array(side));
     }
 
     get content(){
