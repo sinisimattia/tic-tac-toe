@@ -29,6 +29,27 @@ export class Grid implements Representable {
         return result;
     }
 
+    public put(tile: Tile, x: number, y: number, force: boolean = false){
+        if(!this.isPositionValid(x, y))
+            throw new Error(`Invalid position: ${x}:${y}`);
+
+        let cell = this._content[x][y];
+
+        if(!force && (cell === undefined || cell === null || cell.type === Tile.EMPTY))
+            this._content[x][y] = tile;
+    }
+
+    public find(x: number, y: number): Tile {
+        if(!this.isPositionValid(x, y))
+            throw new Error(`Invalid position: ${x}:${y}`);
+
+        return this._content[x][y];
+    }
+
+    private isPositionValid(x: number, y: number): boolean{
+        return (x >= 0 && x <= this._side - 1) && (y >= 0 && y <= this._side - 1);
+    }
+
     public toString(): String {
         let S = new String("Grid\n");
 
