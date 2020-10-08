@@ -35,6 +35,8 @@ export class Dictionary<Type, Index = String> implements Representable {
     }
 
     public add(name: Index, value: Type){
-        this._content.push([name, value]);
+        if(!this.find(name))
+            this._content.push([name, value]);
+        else throw new Error("Cannot have multiple entries with the same name");
     }
 }
