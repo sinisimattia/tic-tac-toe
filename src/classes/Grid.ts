@@ -46,6 +46,13 @@ export class Grid implements Representable {
         return this._content[x][y];
     }
 
+    public findByIndex(i: number) {
+        const x = i % this._side;
+        const y = i / this._side;
+
+        return this.find(x, y);
+    }
+
     public line(start: [x: number, y: number], end: [x: number, y: number]): Array<Tile> {
         const from = {
             x: start[0],
@@ -62,7 +69,7 @@ export class Grid implements Representable {
         if (!this.isPositionValid(from.x, from.y) || !this.isPositionValid(to.x, to.y))
             throw new Error(`Invalid position in either start or end`);
 
-        if(from.x != to.x)
+        if (from.x != to.x)
             for (let x = from.x; x <= (to.x); x++) {
                 const y = ((x - from.x) / (to.x - from.x) * (to.y - from.y)) + from.y;
 
