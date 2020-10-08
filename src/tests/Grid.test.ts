@@ -28,13 +28,18 @@ test("Find & put tile in grid", () => {
 
 test("Get elements in line", () => {
     let grid = new Grid(3);
-    let tile = new Tile(1);
 
-    grid.put(tile, 0, 0);
-    grid.put(tile, 1, 1);
-    grid.put(tile, 2, 2);
+    let tile1 = new Tile(1);
+    let tile2 = new Tile(2);
+    let tile3 = new Tile(3);
+
+    grid.put(tile1, 0, 0);
+    grid.put(tile2, 1, 1);
+    grid.put(tile3, 2, 2);
 
     expect(() => grid.line([0, 0], [3, 3])).toThrowError()
     expect(() => grid.line([-1, 0], [2, 2])).toThrowError()
     expect(() => grid.line([0, 0], [2, 2])).not.toThrowError()
+
+    console.log(grid.line([0, 0], [2, 2]));
 })
