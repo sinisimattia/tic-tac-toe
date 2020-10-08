@@ -6,7 +6,7 @@ test("Dictionary construction and JSON conversion", () => {
         ["name", "Not Mattia"]
     ])
 
-    expect(dictionary.toJson()[0].value).toBe("Mattia")
+    expect(dictionary.content[0].value).toBe("Mattia")
 })
 
 test("Find element in dictionary", () => {
