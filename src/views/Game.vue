@@ -2,7 +2,7 @@
   <div class="hero is-fullheight is-primary">
       <div class="hero-body container">
         <Grid @selected="move" :grid="controller.grid">
-            <template v-slot:[testSlot]>@</template>
+            <template v-slot:[emptySlot]></template>
         </Grid>
       </div>
   </div>
@@ -18,7 +18,7 @@ export default {
     },
     data(){
         return {
-            testSlot: "type-0",
+            emptySlot: "type-0",
             controller: new Game
         }
     },
