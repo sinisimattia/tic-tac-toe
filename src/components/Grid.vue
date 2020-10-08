@@ -1,16 +1,14 @@
 <template>
 	<div class="tile is-ancestor">
-		<div class="tile is-parent is-vertical" v-for="y in size" :key="y">
+		<div class="tile is-parent is-vertical" v-for="x in size" :key="x">
 			<!-- TODO Use dynamic slot names -->
-			<span
-				class="tile is-child box"
-				v-for="x in size"
-				:key="x"
-			>
+			<span class="tile is-child box is-clickable" v-for="y in size" :key="y" @click="select(x, y)">
 				<div class="is-square has-min-size">
 					<div class="content is-flex">
-            <div class="is-centered">({{ x }},{{ y }})</div>
-          </div>
+						<div class="is-centered">
+							<slot :name="`tile-${x}-${y}`">({{ x }},{{ y }})</slot>
+						</div>
+					</div>
 				</div>
 			</span>
 		</div>
@@ -24,6 +22,11 @@ export default {
 			type: Number,
 			default: 3,
 		},
-	},
+  },
+  methods: {
+    select(x, y){
+      this.$emit('selected', {x: x, y: y})
+    }
+  }
 };
 </script>
