@@ -1,7 +1,7 @@
 import { Dictionary } from '@/classes/Dictionary'
 
 test("Dictionary construction and JSON conversion", () => {
-    let dictionary = new Dictionary<String>([
+    const dictionary = new Dictionary<String>([
         ["name", "Mattia"],
         ["name", "Not Mattia"]
     ])
@@ -10,7 +10,7 @@ test("Dictionary construction and JSON conversion", () => {
 })
 
 test("Find element in dictionary", () => {
-    let dictionary = new Dictionary<any, Number>([
+    const dictionary = new Dictionary<any, Number>([
         [1, "Mattia"],
         [2, 18],
     ])

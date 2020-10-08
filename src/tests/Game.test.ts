@@ -1,7 +1,7 @@
 import { Game } from "@/classes/Game"
 
 test("New game", () => {
-    let game = new Game;
+    const game = new Game;
 
     console.info(game.toJson())
 })

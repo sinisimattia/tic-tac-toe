@@ -2,7 +2,7 @@ import { Representable } from '@/interfaces/Representable';
 
 export class Tile implements Representable{
     private _type: number;
-    public static get EMPTY(): number { return 0 };
+    public static get EMPTY(): number { return 0 }
 
     constructor(type: number){
         this._type = type;

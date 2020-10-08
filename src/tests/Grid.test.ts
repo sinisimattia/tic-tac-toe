@@ -2,7 +2,7 @@ import { Grid } from "@/classes/Grid"
 import { Tile } from '@/classes/Tile'
 
 test("Grid construction", () => {
-    let grid = new Grid(3)
+    const grid = new Grid(3)
 
     expect(() => new Grid(0)).toThrowError()
 
@@ -10,8 +10,8 @@ test("Grid construction", () => {
 })
 
 test("Find & put tile in grid", () => {
-    let grid = new Grid(3);
-    let tile = new Tile(1);
+    const grid = new Grid(3);
+    const tile = new Tile(1);
 
     expect(() => grid.put(tile, 3, 3)).toThrowError()
     expect(() => grid.put(tile, 2, 3)).toThrowError()
@@ -27,11 +27,11 @@ test("Find & put tile in grid", () => {
 })
 
 test("Get elements in line", () => {
-    let grid = new Grid(3);
+    const grid = new Grid(3);
 
-    let tile1 = new Tile(1);
-    let tile2 = new Tile(2);
-    let tile3 = new Tile(3);
+    const tile1 = new Tile(1);
+    const tile2 = new Tile(2);
+    const tile3 = new Tile(3);
 
     grid.put(tile1, 0, 0);
     grid.put(tile2, 1, 1);

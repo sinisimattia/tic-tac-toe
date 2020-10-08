@@ -16,7 +16,7 @@ export class Dictionary<Type, Index = String> implements Representable {
     }
 
     get content(): Array<any> {
-        var arr = new Array;
+        const arr = new Array;
 
         this._content.forEach(element => {
             arr.push({
@@ -29,7 +29,7 @@ export class Dictionary<Type, Index = String> implements Representable {
     }
 
     public find(name: Index): Type | undefined {
-        let el = this._content.find((value) => value[0] === name);
+        const el = this._content.find((value) => value[0] === name);
 
         return el ? el[1] : undefined;
     }

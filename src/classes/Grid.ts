@@ -16,7 +16,7 @@ export class Grid implements Representable {
     }
 
     get content() {
-        let result = new Array;
+        const result = new Array;
 
         this._content.forEach((row, rowIndex) => {
             result.push([]);
@@ -33,7 +33,7 @@ export class Grid implements Representable {
         if (!this.isPositionValid(x, y))
             throw new Error(`Invalid position: ${x}:${y}`);
 
-        let cell = this._content[x][y];
+        const cell = this._content[x][y];
 
         if (!force && (cell === undefined || cell === null || cell.type === Tile.EMPTY))
             this._content[x][y] = tile;
@@ -47,24 +47,24 @@ export class Grid implements Representable {
     }
 
     public line(start: [x: number, y: number], end: [x: number, y: number]): Array<Tile> {
-        let from = {
+        const from = {
             x: start[0],
             y: start[1]
         };
 
-        let to = {
+        const to = {
             x: end[0],
             y: end[1]
         };
 
-        let results = new Array<Tile>();
+        const results = new Array<Tile>();
 
         if (!this.isPositionValid(from.x, from.y) || !this.isPositionValid(to.x, to.y))
             throw new Error(`Invalid position in either start or end`);
 
         if(from.x != to.x)
             for (let x = from.x; x <= (to.x); x++) {
-                let y = ((x - from.x) / (to.x - from.x) * (to.y - from.y)) + from.y;
+                const y = ((x - from.x) / (to.x - from.x) * (to.y - from.y)) + from.y;
 
                 results.push(this.find(x, y));
             }
