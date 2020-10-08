@@ -1,6 +1,6 @@
 <template>
 	<div class="columns is-vcentered is-marginless is-paddingless">
-    <div class="column is-paddingless is-hidden-mobile">
+    <div class="column is-paddingless is-half is-hidden-mobile">
       <div class="hero is-fullheight">
 			<div class="hero-body container">
 				<div class="has-text-centered">
