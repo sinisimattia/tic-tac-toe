@@ -26,6 +26,10 @@ export class Game implements Representable {
         return this._grid
     }
 
+    get dictionary(){
+        return this._playersDictionary;
+    }
+
     toString(): String {
         throw new Error('Method not implemented.');
     }
