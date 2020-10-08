@@ -8,7 +8,7 @@ export class Game implements Representable {
     private _turnIndex: number = 0;
     private _playersDictionary: Dictionary<string, number>;
 
-    constructor(gridSize: number = 3, symbols: string[] = ["X", "O"]){
+    constructor(gridSize: number = 3, symbols: string[] = ["", "X", "O"]){
         this._grid = new Grid(gridSize);
 
         this._playersDictionary = new Dictionary<string, number>();
