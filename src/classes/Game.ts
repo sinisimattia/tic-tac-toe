@@ -22,6 +22,10 @@ export class Game implements Representable {
     private completeTurn(){}
     private checkStatus(){}
 
+    get grid(){
+        return this._grid
+    }
+
     toString(): String {
         throw new Error('Method not implemented.');
     }
