@@ -40,6 +40,6 @@ test("Get elements in line", () => {
     expect(() => grid.line([0, 0], [3, 3])).toThrowError()
     expect(() => grid.line([-1, 0], [2, 2])).toThrowError()
     expect(() => grid.line([0, 0], [2, 2])).not.toThrowError()
-
-    console.log(grid.line([0, 0], [2, 2]));
+    expect(() => grid.line([0, 0], [0, 2])).not.toThrowError()
+    expect(() => grid.line([0, 0], [2, 0])).not.toThrowError()
 })
