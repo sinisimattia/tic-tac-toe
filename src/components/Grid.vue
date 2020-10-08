@@ -11,7 +11,7 @@
 					<div class="content is-flex">
 						<div class="is-centered">
 							<!-- TODO Use cell content for slot name -->
-							<slot :name="`type-${grid.find(x - 1, y - 1)}`"></slot>
+							<slot :name="grid.find(x - 1, y - 1)"></slot>
 						</div>
 					</div>
 				</div>
