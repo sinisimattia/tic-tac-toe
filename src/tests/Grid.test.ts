@@ -1,4 +1,4 @@
-import { Grid } from "../classes/Grid"
+import { Grid } from "@/classes/Grid"
 
 test("Grid construction", () => {
     let grid = new Grid(3);

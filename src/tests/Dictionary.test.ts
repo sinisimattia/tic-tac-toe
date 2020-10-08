@@ -1,4 +1,4 @@
-import { Dictionary } from '../classes/Dictionary'
+import { Dictionary } from '@/classes/Dictionary'
 
 test("Dictionary construction and JSON conversion", () => {
     let dictionary = new Dictionary<String>([

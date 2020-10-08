@@ -1,4 +1,4 @@
-import { Tile } from "../classes/Tile"
+import { Tile } from "@/classes/Tile"
 
 test("Tile construction and getters", () => {
     let tile = new Tile(1)
