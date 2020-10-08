@@ -6,7 +6,7 @@
 				<div class="is-square has-min-size">
 					<div class="content is-flex">
 						<div class="is-centered">
-							<slot :name="`tile-${x}-${y}`">({{ x }},{{ y }})</slot>
+							<slot :name="`tile-${(y - 1) + (size * (x - 1))}`">({{ x }},{{ y }})</slot>
 						</div>
 					</div>
 				</div>
