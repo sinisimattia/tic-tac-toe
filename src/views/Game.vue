@@ -1,7 +1,7 @@
 <template>
   <div class="hero is-fullheight is-primary">
       <div class="hero-body container">
-        <Grid @selected="move" :size="game.grid.side">
+        <Grid @selected="move" :content="game.grid">
             <template v-slot:[testSlot]>@</template>
         </Grid>
       </div>
