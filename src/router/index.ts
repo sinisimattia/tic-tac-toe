@@ -13,6 +13,11 @@ const routes = [
     path: '/c',
     name: 'Prepare',
     component: () => import(/* webpackChunkName: "prepare" */ '@/views/Prepare.vue')
+  },
+  {
+    path: '/p',
+    name: 'Play',
+    component: () => import(/* webpackChunkName: "prepare" */ '@/views/Game.vue')
   }
 ]
 
