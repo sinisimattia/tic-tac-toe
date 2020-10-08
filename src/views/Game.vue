@@ -1,5 +1,5 @@
 <template>
-  <div class="hero is-fullheight is-dark">
+  <div class="hero is-fullheight is-primary">
       <div class="hero-body container">
         <Grid />
       </div>
