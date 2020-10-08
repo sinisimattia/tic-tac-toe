@@ -1,7 +1,7 @@
 <template>
   <div class="hero is-fullheight is-primary">
       <div class="hero-body container">
-        <Grid>
+        <Grid @selected="move">
             <template v-slot:[testSlot]>@</template>
         </Grid>
       </div>
@@ -18,6 +18,11 @@ export default {
     data(){
         return {
             testSlot: "tile-2-2"
+        }
+    },
+    methods: {
+        move(e){
+            console.table(e)
         }
     }
 }
