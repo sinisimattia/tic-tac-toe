@@ -1,10 +1,18 @@
 <template>
-  <p>Game</p>
+  <div class="hero is-fullheight is-dark">
+      <div class="hero-body container">
+        <Grid />
+      </div>
+  </div>
 </template>
 
 <script>
-export default {
+import Grid from "@/components/Grid"
 
+export default {
+    components: {
+        Grid,
+    }
 }
 </script>
 
