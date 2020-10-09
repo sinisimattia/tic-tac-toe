@@ -24,7 +24,7 @@ export default {
     },
     methods: {
         move(e){
-            console.table(e)
+            this.controller.move(e.x, e.y)
         }
     },
     computed: {

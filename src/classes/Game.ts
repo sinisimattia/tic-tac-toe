@@ -21,7 +21,12 @@ export class Game implements Representable {
         })
     }
 
-    public put(){}
+    public move(x: number, y: number){
+        const turnInfo = this.turn;
+        const tile = new Tile(turnInfo.index)
+
+        this._grid.put(tile, x, y)
+    }
 
     //TODO Make sure the turn never hits 0 and loops around the dictionary
     private completeTurn(){}
@@ -33,6 +38,13 @@ export class Game implements Representable {
 
     get dictionary(){
         return this._playersDictionary;
+    }
+
+    get turn(){
+        return {
+            index: this._turnIndex,
+            symbol: this._playersDictionary.find(this._turnIndex)
+        }
     }
 
     toString(): String {
