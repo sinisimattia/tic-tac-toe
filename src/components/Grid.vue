@@ -5,7 +5,7 @@
 				class="tile is-child box is-clickable"
 				v-for="y in content.side"
 				:key="y"
-				@click="select(x, y)"
+				@click="select(x - 1, y - 1)"
 			>
 				<div class="is-square has-min-size">
 					<div class="content is-flex">
