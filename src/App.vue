@@ -14,7 +14,7 @@
 				</div>
 
 				<div class="hero-foot">
-					<div class="container">
+					<div class="container section">
 						<a
 							class="is-block has-text-centered has-text-grey"
 							href="https://github.com/sinisimattia"
