@@ -22,8 +22,8 @@
 				</form>
 
 				<div class="box is-rounded my-3">
-					<transition-group name="list" tag="ul" v-if="symbols.length">
-						<li v-for="(s, i) in symbols" :key="s" class="columns is-vcentered">
+					<ul v-if="symbols.length">
+						<li v-for="(s, i) in symbols" :key="i" class="columns is-vcentered">
 							<div class="column">
 								<span class="is-block is-centered">{{ s }}</span>
 							</div>
@@ -36,7 +36,7 @@
 								</button>
 							</div>
 						</li>
-					</transition-group>
+					</ul>
 
 					<p v-else>
 						No symbols created, you'll be using the
@@ -77,14 +77,3 @@ export default {
 	},
 };
 </script>
-
-<style scoped>
-.list-enter-active,
-.list-leave-active {
-  transition: all .3s linear;
-}
-.list-enter-from,
-.list-leave-to {
-  opacity: 0;
-}
-</style>
