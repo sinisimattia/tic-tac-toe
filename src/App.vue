@@ -15,7 +15,7 @@
 
 			<div class="hero-foot">
 				<div class="container">
-					<p class="has-text-centered has-text-grey">Mattia Sinisi</p>
+					<a class="is-block has-text-centered has-text-grey" href="https://github.com/sinisimattia" rel="noopener">Mattia Sinisi</a>
 				</div>
 			</div>
 		</div>
