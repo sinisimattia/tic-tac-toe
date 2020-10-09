@@ -6,7 +6,7 @@ Vue.use(VueRouter)
 const routes = [
   {
     path: '/',
-    name: 'TicTacToe',
+    name: 'Home',
     component: () => import(/* webpackChunkName: "prepare" */ '@/views/Home.vue')
   },
   {
