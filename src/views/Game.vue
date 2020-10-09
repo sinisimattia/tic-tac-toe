@@ -19,7 +19,6 @@ export default {
     data(){
         return {
             controller: new Game,
-            game: {}
         }
     },
     mounted(){
@@ -28,7 +27,6 @@ export default {
     methods: {
         move(e){
             this.controller.move(e.x, e.y)
-            this.game = this.controller.toJson()
         }
     },
 }
