@@ -28,6 +28,10 @@ export class Dictionary<Type, Index = String> implements Representable {
         return arr;
     }
 
+    get length(){
+        return this._content.length
+    }
+
     public find(name: Index): Type | undefined {
         const el = this._content.find((value) => value[0] === name);
 
