@@ -40,7 +40,7 @@
 
 					<p v-else>
 						No symbols created, you'll be using the
-						<strong>default ones</strong>.
+						<strong>boring ones</strong>.
 					</p>
 				</div>
 			</div>
