@@ -1,5 +1,8 @@
 <template>
   <div class="hero is-fullheight is-primary">
+      <div class="hero-head container section">
+          <p>It's <span class="tag is-info">{{controller.turn.symbol}}</span>'s turn</p>
+      </div>
       <div class="hero-body container">
         <Grid @selected="move" :grid="controller.grid">
             <template v-for="type in controller.dictionary.content" v-slot:[type.name]>{{type.value}}</template>
