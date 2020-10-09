@@ -26,10 +26,16 @@ export class Game implements Representable {
         const tile = new Tile(turnInfo.index)
 
         this._grid.put(tile, x, y)
+        this.completeTurn()
     }
 
     //TODO Make sure the turn never hits 0 and loops around the dictionary
-    private completeTurn(){}
+    private completeTurn(){
+        if(this._turnIndex < this._playersDictionary.length - 1)
+            this._turnIndex++;
+        else
+            this._turnIndex = 1;
+    }
     private checkStatus(){}
 
     get grid(){
