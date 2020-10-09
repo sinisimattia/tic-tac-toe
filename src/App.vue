@@ -7,7 +7,7 @@
 						<h1 class="title is-1">
 							<span>Tic</span>
 							<span class="has-text-primary">Tac</span>
-							<span>Toe</span>
+							<span class="has-text-success">Vue</span>
 						</h1>
 						<h2 class="subtitle is-3">but with emojis</h2>
 					</div>
