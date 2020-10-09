@@ -33,14 +33,18 @@ export class Grid implements Representable {
         return this._side;
     }
 
-    public put(tile: Tile, x: number, y: number, force: boolean = false) {
+    public put(tile: Tile, x: number, y: number, force: boolean = false): boolean {
         if (!this.isPositionValid(x, y))
             throw new Error(`Invalid position: ${x}:${y}`);
 
         const cell = this._content[x][y];
 
-        if (!force && (cell === undefined || cell === null || cell.type === Tile.EMPTY))
+        if (!force && (cell === undefined || cell === null || cell.type === Tile.EMPTY)){
             this._content[x][y] = tile;
+            return true;
+        }
+        else
+            return false;
     }
 
     public find(x: number, y: number): Tile {

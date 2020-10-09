@@ -25,8 +25,8 @@ export class Game implements Representable {
         const turnInfo = this.turn;
         const tile = new Tile(turnInfo.index)
 
-        this._grid.put(tile, x, y)
-        this.completeTurn()
+        if(this._grid.put(tile, x, y))
+            this.completeTurn()
     }
 
     private completeTurn(){
