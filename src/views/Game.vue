@@ -5,6 +5,12 @@
             <template v-for="type in controller.dictionary.content" v-slot:[type.name]>{{type.value}}</template>
         </Grid>
       </div>
+
+      <div class="hero-foot container">
+          <div class="section">
+            <router-link class="button is-dark" :to="{name: 'Home'}">Back</router-link>
+          </div>
+      </div>
   </div>
 </template>
 
