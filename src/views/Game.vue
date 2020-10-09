@@ -32,7 +32,7 @@ export default {
         }
     },
     computed: mapGetters(["size", "symbols"]),
-    mounted(){
+    beforeMount(){
         this.controller = new Game(this.size, this.symbols)
         this.game = this.controller.toJson()
     },
