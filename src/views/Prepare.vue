@@ -26,8 +26,13 @@
 
 				<div class="box is-rounded my-3">
 					<ul v-if="symbols.length">
-						<li v-for="(s, i) in symbols" :key="i">
-							<button @click="removeSymbol(i)">{{ s }}</button>
+						<li v-for="(s, i) in symbols" :key="i" class="columns is-vcentered">
+							<div class="column">
+                <span class="is-block is-centered">{{s}}</span>
+              </div>
+              <div class="column is-one-third has-text-center">
+                <button class="button is-danger is-small is-rounded is-block is-centered" @click="removeSymbol(i)">Remove</button>
+              </div>
 						</li>
 					</ul>
 
