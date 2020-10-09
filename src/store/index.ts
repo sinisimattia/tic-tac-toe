@@ -22,6 +22,9 @@ export default new Vuex.Store({
     },
     removeSymbol(state, index: number) {
       state.symbols.splice(index, 1)
+    },
+    setSize(state, size: number){
+      state.gridSize = size
     }
   }
 })
