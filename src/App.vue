@@ -1,6 +1,6 @@
 <template>
 	<div class="columns is-vcentered is-marginless is-paddingless">
-		<div class="column is-paddingless is-half is-hidden-mobile" v-show="!fullscreen">
+		<div class="column is-paddingless is-half is-hidden-mobile">
 			<div class="hero is-fullheight">
 				<div class="hero-body container">
 					<div class="has-text-centered">
@@ -36,21 +36,6 @@
 		</div>
 	</div>
 </template>
-
-<script>
-export default {
-	data() {
-		return {
-			fullscreen: false,
-		};
-	},
-	methods: {
-		toggleFullScreen() {
-			this.fullscreen = !this.fullscreen;
-		},
-	},
-};
-</script>
 
 <style scoped>
 .fade-enter-active,
