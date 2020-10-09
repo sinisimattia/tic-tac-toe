@@ -9,7 +9,11 @@ export class Game implements Representable {
     private _turnIndex: number = 1;
     private _playersDictionary: Dictionary<string, number>;
 
-    constructor(gridSize: number = 3, symbols: string[] = ["✕", "◯"]){
+    constructor(gridSize: number = 3, symbols: string[] = []){
+        if(!symbols || symbols.length === 0){
+            symbols = ["✕", "◯"];
+        }
+
         this._grid = new Grid(gridSize);
 
         this._playersDictionary = new Dictionary<string, number>();
