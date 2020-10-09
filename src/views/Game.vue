@@ -18,20 +18,19 @@ export default {
     },
     data(){
         return {
-            emptySlot: "type-0",
-            controller: new Game
+            controller: new Game,
+            game: {}
         }
+    },
+    mounted(){
+        this.game = this.controller.toJson()
     },
     methods: {
         move(e){
             this.controller.move(e.x, e.y)
+            this.game = this.controller.toJson()
         }
     },
-    computed: {
-        game(){
-            return this.controller.toJson()
-        }
-    }
 }
 </script>
 
