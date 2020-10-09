@@ -29,6 +29,10 @@ export class Grid implements Representable {
         return result;
     }
 
+    get side(){
+        return this._side;
+    }
+
     public put(tile: Tile, x: number, y: number, force: boolean = false) {
         if (!this.isPositionValid(x, y))
             throw new Error(`Invalid position: ${x}:${y}`);
