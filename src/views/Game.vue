@@ -20,6 +20,7 @@
 <script>
 import Grid from "@/components/Grid"
 import { Game } from '@/classes/Game'
+import { mapGetters } from "vuex"
 
 export default {
     components: {
@@ -27,10 +28,12 @@ export default {
     },
     data(){
         return {
-            controller: new Game,
+            controller: {},
         }
     },
+    computed: mapGetters(["size", "symbols"]),
     mounted(){
+        this.controller = new Game(this.size, this.symbols)
         this.game = this.controller.toJson()
     },
     methods: {
