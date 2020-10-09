@@ -29,7 +29,6 @@ export class Game implements Representable {
         this.completeTurn()
     }
 
-    //TODO Make sure the turn never hits 0 and loops around the dictionary
     private completeTurn(){
         if(this._turnIndex < this._playersDictionary.length - 1)
             this._turnIndex++;
