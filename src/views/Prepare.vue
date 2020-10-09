@@ -9,19 +9,41 @@
 								class="input is-rounded"
 								type="text"
 								placeholder="Your symbol here"
-                v-model="symbol"
+								maxlength="3"
+								v-model="symbol"
 							/>
 						</div>
 						<div class="control">
-							<button class="button is-rounded is-primary" type="submit"> 📌 </button>
+							<button
+								class="button is-rounded is-info is-light"
+								type="submit"
+							>
+								📌
+							</button>
 						</div>
 					</div>
 				</form>
+
+				<div class="box is-rounded my-3">
+					<ul v-if="symbols.length">
+						<li v-for="(s, i) in symbols" :key="i">
+							<button @click="removeSymbol(i)">{{ s }}</button>
+						</li>
+					</ul>
+
+					<p v-else>
+						No symbols created, you'll be using the
+						<strong>default ones</strong>.
+					</p>
+				</div>
 			</div>
 		</div>
 
 		<div class="hero-foot p-6 is-flex">
-			<router-link class="button is-large is-outlined is-inverted is-info is-inline-block is-centered" :to="{ name: 'Play' }">
+			<router-link
+				class="button is-large is-outlined is-inverted is-info is-inline-block is-centered"
+				:to="{ name: 'Play' }"
+			>
 				🃏 Play 🃏
 			</router-link>
 		</div>
@@ -29,20 +51,22 @@
 </template>
 
 <script>
-import { mapGetters, mapMutations } from 'vuex'
+import { mapGetters, mapMutations } from "vuex";
 export default {
-  methods: {
-    ...mapMutations(["addSymbol", "removeSymbol"]),
-    newSymbol(){
-      this.addSymbol(this.symbol)
-      this.symbol = null
-    },
-  },
-  computed: mapGetters(["symbols"]),
-  data(){
-    return {
-      symbol: null,
-    }
-  }
-}
+	methods: {
+		...mapMutations(["addSymbol", "removeSymbol"]),
+		newSymbol() {
+			if (this.symbol) {
+				this.addSymbol(this.symbol);
+				this.symbol = null;
+			}
+		},
+	},
+	computed: mapGetters(["symbols"]),
+	data() {
+		return {
+			symbol: null,
+		};
+	},
+};
 </script>
