@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div class="is-unselectable">
 		<table class="table is-bordered">
 			<tbody>
 				<tr v-for="x in grid.side" :key="x">
