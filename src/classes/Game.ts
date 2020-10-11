@@ -39,6 +39,7 @@ export class Game implements Representable {
         else
             this._turnIndex = 1;
     }
+
     private checkStatus(){}
 
     get grid(){
