@@ -94,6 +94,10 @@ export class Game implements Representable {
         }
     }
 
+    get winner() {
+        return this._winner;
+    }
+
     toString(): String {
         throw new Error('Method not implemented.');
     }
