@@ -43,7 +43,11 @@ export default {
     watch: {
         'controller.winner': {
             handler(value){
-                alert(value);
+                if(value)
+                    this.$swal(`${value} has won!`, "You all palyed well, but not well enough!", undefined)
+                        .then(() => {
+                            this.controller = new Game(this.size, this.symbols)
+                        })
             }
         }
     }
