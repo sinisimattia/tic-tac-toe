@@ -34,12 +34,18 @@ export default {
     computed: mapGetters(["size", "symbols"]),
     beforeMount(){
         this.controller = new Game(this.size, this.symbols)
-        this.game = this.controller.toJson()
     },
     methods: {
         move(e){
             this.controller.move(e.x, e.y)
         }
     },
+    watch: {
+        'controller.winner': {
+            handler(value){
+                alert(value);
+            }
+        }
+    }
 }
 </script>
