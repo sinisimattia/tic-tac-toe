@@ -34,7 +34,9 @@
     "jest": "^26.4.2",
     "sass": "^1.26.11",
     "sass-loader": "^10.0.2",
+    "sweetalert2": "^10.4.0",
     "typescript": "^4.0.3",
+    "vue-sweetalert2": "^3.0.8",
     "vue-template-compiler": "^2.6.11"
   },
   "eslintConfig": {
