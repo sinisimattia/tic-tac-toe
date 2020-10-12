@@ -43,7 +43,41 @@ export class Game implements Representable {
             this._turnIndex = 1;
     }
 
-    private checkStatus(){}
+    protected checkStatus(){
+        const diagonals = new Array<Tile[]>();
+        const length = this._grid.side - 1;
+
+        diagonals.push(this._grid.line([0, 0], [length, length]));
+        diagonals.push(this._grid.line([0, length], [length, 0]));
+
+        diagonals.forEach(line => {
+            const lineDominator = this.getLineDominator(line);
+            if(lineDominator){
+                this._winner = this._playersDictionary.find(lineDominator.type);
+                return;
+            }
+        })
+
+        for(let y = 0; y <= length; y++){
+            const lineDominator = this.getLineDominator(this._grid.line([0, y], [length, y]));
+            if(lineDominator){
+                this._winner = this._playersDictionary.find(lineDominator.type);
+                break;
+            }
+        }
+
+        for(let x = 0; x <= length; x++){
+            const lineDominator = this.getLineDominator(this._grid.line([x, 0], [x, length]));
+            if(lineDominator){
+                this._winner = this._playersDictionary.find(lineDominator.type);
+                break;
+            }
+        }
+    }
+
+    private getLineDominator(line: Array<Tile>): Tile | undefined{
+        return line.every(tile => tile.type !== Tile.EMPTY && (tile.type === line[0].type)) ? line[0] : undefined;
+    }
 
     get grid(){
         return this._grid
