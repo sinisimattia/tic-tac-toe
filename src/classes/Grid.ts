@@ -78,13 +78,13 @@ export class Grid implements Representable {
             throw new Error(`Invalid position in either start or end`);
 
         if (from.x != to.x)
-            for (let x = from.x; x <= (to.x); x++) {
+            for (let x = from.x; x <= to.x; x++) {
                 const y = ((x - from.x) / (to.x - from.x) * (to.y - from.y)) + from.y;
 
                 results.push(this.find(x, y));
             }
         else
-            for (let y = from.y; y < to.y; y++)
+            for (let y = from.y; y <= to.y; y++)
                 results.push(this.find(from.x, y))
 
         return results;
