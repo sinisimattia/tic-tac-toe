@@ -31,9 +31,9 @@ export default {
             controller: {},
         }
     },
-    computed: mapGetters(["size", "symbols"]),
+    computed: mapGetters(["symbols"]),
     beforeMount(){
-        this.controller = new Game(this.size, this.symbols)
+        this.controller = new Game(this.symbols.length + 1, this.symbols)
     },
     methods: {
         move(e){
@@ -46,7 +46,7 @@ export default {
                 if(value)
                     this.$swal(`${value} has won!`, "You all palyed well, but not well enough!", undefined)
                         .then(() => {
-                            this.controller = new Game(this.size, this.symbols)
+                            this.controller = new Game(this.symbols.length + 1, this.symbols)
                         })
             }
         }
